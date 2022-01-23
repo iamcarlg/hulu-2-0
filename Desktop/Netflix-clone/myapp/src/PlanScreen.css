@@ -1,0 +1,38 @@
+.planScreen{
+    width : 100%;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.planScreen > div{
+    margin-top : 20px;
+
+}
+.planScreen__details{
+    display: flex;
+
+    justify-content: space-between;
+}
+
+/* .planScreen__details:hover{
+    display:block;
+    cursor : pointer;
+    background: white;
+} */
+
+.planScreen__details > button{
+    cursor : pointer;
+    background-color : #e50914;
+
+    padding : 10px 20px;
+
+    margin-top: 10px;
+    border: none;
+
+    width : contain;
+    color : #fff;
+
+    font-weight: 600;
+}
