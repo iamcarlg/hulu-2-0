@@ -7,7 +7,8 @@ import Nav  from './Nav';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom";
 import { auth } from './firebase';
 import { login, logout, selectUser} from './features/userSlice';
@@ -43,18 +44,18 @@ function App() {
           <LoginScreen />
         ) : (
           
+          // <Switch>
+          //   <Route exact path = "/">
+          //     <HomeScreen />
+
+          //   </Route>
+          // </Switch>,
+
           <Switch>
-            <Route path = "/">
-              <HomeScreen />
-
-            </Route>
-          </Switch>,
-
-          <Switch>
-              <Route path = "/profile">
-                <ProfileScreen/>
-
-               </Route>
+                <Route exact path="/">
+                  <Redirect to="/" />
+                  <ProfileScreen />
+                </Route>
           </Switch>
 
         )}
