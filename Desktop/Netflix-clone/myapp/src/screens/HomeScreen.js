@@ -1,12 +1,38 @@
-import React from "react";
+import {React} from "react";
 import "./HomeScreen.css";
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/userSlice";
+import "./HomeScreen.css";
+
 import Nav from '../Nav';
+import Banner from "../Banner";
+import Row from "../Row";
+import requests from "../Requests";
 
 function HomeScreen(){
+    const user = useSelector(selectUser);
+
     return (
+
         <div className="homeScreen">
-            <Nav />
+            <Nav/>
+            <Banner/>
+
+            <Row
+        title="NETFLIX ORIGINALS"
+        fetchUrl={requests.fetchNetflixOriginals}
+        isLargeRow
+      />
+
+            <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
+            <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
+            <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
+            <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
+            <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
+            <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
+            <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
         </div>
+
     );
 
 }
@@ -16,60 +42,33 @@ export default HomeScreen;
 
 
 
-// <!DOCTYPE html>
-// <html>
-//     <head>
-//         <title>Netflix 2.0: Homepage</title>
-//         <meta charset="UTF-8">
-//         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-//         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-//         <link rel="stylesheet" href="css/style.css">
-//     </head>
 
-//     <body>
+        // <div className="homeScreen">
+        //     <Nav />
 
-//         <!-- navbar -->
-//         <nav class ="navbar">
-//             <img src="img/logo.png" alt="logo" class = "logo">
-//             <div class="join-box" >
-//                 <p class = "join-msg">unlimited tv shows & movies</p>
-//                 <a href = "https://iamcarlg.github.io/personal-portfolio/" target = "_blank"><button class = "btn">The creator</button></a>
-//                 <a href="./login"><button class = "btn join-btn">sign in</button></a>
+        //     <header class="main">
+        //         <h1 class="heading">movies</h1>
+        //         <p class="info">Movies move us like nothing else can, whether they're scary, funny, dramatic, romantic or anywhere in-between. So many titles, so much to experience.</p>
 
-//             </div>
-//         </nav>
 
-//         <!-- main section -->
-//         <header class="main">
-//             <h1 class="heading">movies</h1>
-//             <p class="info">Movies move us like nothing else can, whether they're scary, funny, dramatic, romantic or anywhere in-between. So many titles, so much to experience.</p>
+        //         <div class="movie-list">
 
-//             <br>
-//             <a href="./login"><button class = "btn join-btn">join now</button></a>
+        //             <button class="pre-btn">
+        //                 <img src="img/pre.png" alt=""/>
 
-//             <!-- movie list div -->
-//             <!-- <div class="movie-list">
-
-//                 <button class="pre-btn"><img src="img/pre.png" alt=""></button>
-            
-//                 <h1 class="movie-category">Popular movie</h1>
-            
-//                 <div class="movie-container">
-//                     <div class="movie">
-//                         <img src="img/poster.jpg" alt="">
-//                         <p class="movie-title">movie name</p>
-//                     </div>
-//                 </div>
-            
-//                 <button class="nxt-btn"><img src="img/nxt.png" alt=""></button>
-            
-//             </div> -->
-
-//         </header>
-
-//         <script src = "js/api.js"></script>
-//         <script src = "js/scroll.js"></script>
-//         <script src = "js/home.js"></script>
-
-//     </body>
-// </html>
+        //         </button>
+                
+        //             <h1 class="movie-category">Popular movie</h1>
+                
+        //             <div class="movie-container">
+        //                 <div class="movie">
+        //                     <img src="img/poster.jpg" alt=""/>
+        //                     <p class="movie-title">movie name</p>
+        //                 </div>
+        //             </div>
+                
+        //             <button class="nxt-btn"><img src="img/nxt.png" alt=""/></button>
+                
+        //         </div>
+        //     </header>            
+        // </div>

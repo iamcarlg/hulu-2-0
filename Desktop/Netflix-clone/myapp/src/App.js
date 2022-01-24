@@ -3,7 +3,7 @@ import './';
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './LoginScreen';
 import ProfileScreen from './screens/ProfileScreen';
-import Nav  from './Nav';
+import "./App.css";
 import {
   BrowserRouter as Router,
   Switch,
@@ -41,24 +41,23 @@ function App() {
 
       <Router>
         {!user ? (
-          <LoginScreen />
+            <LoginScreen />
+
         ) : (
-          
-          // <Switch>
-          //   <Route exact path = "/">
-          //     <HomeScreen />
-
-          //   </Route>
-          // </Switch>,
-
           <Switch>
-                <Route exact path="/">
-                  <Redirect to="/" />
-                  <ProfileScreen />
-                </Route>
-          </Switch>
+              <Route exact path="/profile">
+                <ProfileScreen />
+              </Route>
 
+              <Route path="/home">
+                  <HomeScreen />
+              </Route>
+              <Route path="/">
+                  <ProfileScreen />
+              </Route>
+          </Switch>
         )}
+        
       </Router>
     </div>
   );

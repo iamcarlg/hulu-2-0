@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 
-import Nav from "./Nav";
 import SignupScreen from "./SignupScreen";
 
 import "./LoginScreen.css";

@@ -3,8 +3,9 @@ import './ProfileScreen.css';
 import Nav from '../Nav';
 import PlanScreen from "../PlanScreen";
 import { useSelector } from "react-redux";
-import userSlice, { selectUser } from "../features/userSlice";
+import { selectUser } from "../features/userSlice";
 import { auth } from "../firebase";
+import { Redirect, useHistory } from "react-router-dom";
 
 function ProfileScreen(){
 
