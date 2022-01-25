@@ -1,11 +1,11 @@
-import React, { useReducer } from "react";
+import React from "react";
 import './ProfileScreen.css';
 import Nav from '../Nav';
 import PlanScreen from "../PlanScreen";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import { auth } from "../firebase";
-import { Redirect, useHistory } from "react-router-dom";
+// import { Redirect, useHistory } from "react-router-dom";
 
 function ProfileScreen(){
 

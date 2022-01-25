@@ -1,7 +1,7 @@
 import {React} from "react";
 import "./HomeScreen.css";
-import { useSelector } from "react-redux";
-import { selectUser } from "../features/userSlice";
+// import { useSelector } from "react-redux";
+// import { selectUser } from "../features/userSlice";
 import "./HomeScreen.css";
 
 import Nav from '../Nav';
@@ -10,7 +10,7 @@ import Row from "../Row";
 import requests from "../Requests";
 
 function HomeScreen(){
-    const user = useSelector(selectUser);
+    // const user = useSelector(selectUser);
 
     return (
 

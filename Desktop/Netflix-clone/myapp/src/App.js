@@ -7,8 +7,7 @@ import "./App.css";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Redirect
+  Route
 } from "react-router-dom";
 import { auth } from './firebase';
 import { login, logout, selectUser} from './features/userSlice';

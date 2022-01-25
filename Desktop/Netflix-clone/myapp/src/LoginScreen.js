@@ -13,7 +13,7 @@ function LoginScreen(){
 
             <div className = "loginScreen_background">
                 <img src="img/logo.png" alt="background" className = "loginScreen_logo"/>
-                <a href = "https://iamcarlg.github.io/personal-portfolio/" target = "_blank"><button className = "creator_button">The creator</button></a>
+                <a rel = "noreferrer" href = "https://iamcarlg.github.io/personal-portfolio/" target = "_blank"><button className = "creator_button">The creator</button></a>
                 <button onClick = {() => setSignIn(true)} className = "loginScreen_button">Sign In</button>
                 
                 <div className = "loginScreen_gradient"></div>
