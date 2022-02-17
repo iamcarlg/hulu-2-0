@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "./axios";
 import "./Row.css";
 
 function Row({ title, fetchUrl, isLargeRow = false }) {
+  const history = useHistory();
+
   const [movies, setMovies] = useState([]);
 
   const base_url = "https://image.tmdb.org/t/p/original/";
@@ -27,6 +30,12 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
             ((isLargeRow && movie.poster_path) ||
               (!isLargeRow && movie.backdrop_path)) && (
               <img
+                onClick={()=>{
+                  history.push('/about')
+                  console.log("Trying to view movie")
+                  console.log(this.props.movie.title)
+                }}
+
                 className={`row__poster ${isLargeRow && "row__posterLarge"}`}
                 key={movie.id}
                 src={`${base_url}${

@@ -1,7 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
+import { useHistory } from "react-router-dom";
 import "./PlanScreen.css";
 
 function PlanScreen(){
+
+    const history = useHistory();
+    const [state, setState] = useState(0);
 
     return(
         <div className="planScreen">
@@ -11,7 +15,7 @@ function PlanScreen(){
                     <p>1080p</p>
                 </div>
 
-                <button>Subscribe</button>
+                <button onClick={() => history.push("/paypal-standard")}>Subscribe</button>
             </div>
 
             <div className="planScreen__details planScreen__Basic">
@@ -20,7 +24,7 @@ function PlanScreen(){
                     <p>480px</p>
                 </div>
 
-                <button>Subscribe</button>
+                <button onClick={() => history.push("/paypal-basic")}>Subscribe</button>
 
             </div>
 
@@ -30,7 +34,7 @@ function PlanScreen(){
                     <p>4K+HDR</p>
                 </div>
 
-                <button>Subscribe</button>
+                <button onClick={() => history.push("/paypal-premium")}>Subscribe</button>
 
 
             </div>
